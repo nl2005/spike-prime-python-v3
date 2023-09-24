@@ -18,13 +18,13 @@ async def main():
 
 async def main_left():
     while True:
-        await runloop.until(lambda: button.pressed(button.LEFT))
+        await runloop.until(lambda: button.pressed(button.LEFT)>0)
         await runloop.sleep_ms(1000)
         await motor_pair.move_for_degrees(motor_pair.PAIR_1,int(DEGREES_PER_CM * 20),0, velocity=DEFAULT_VELOCITY)
 
 async def main_right():
     while True:
-        await runloop.until(lambda: button.pressed(button.RIGHT))
+        await runloop.until(lambda: button.pressed(button.RIGHT)>0)
         await runloop.sleep_ms(1000)
         motor_pair.move(motor_pair.PAIR_1, 0, velocity=DEFAULT_VELOCITY)
         await runloop.until(lambda: distance_sensor.distance(port.F) < 100)
@@ -43,7 +43,7 @@ async def solution():
     await sound.beep(1661,200)
 
 async def solution_right():
-    await runloop.until(lambda: button.pressed(button.RIGHT))
+    await runloop.until(lambda: button.pressed(button.RIGHT)>0)
     await runloop.sleep_ms(1000)
     motor_pair.move(motor_pair.PAIR_1, 0, velocity=DEFAULT_VELOCITY)
     runloop.until(lambda: distance_sensor.distance(port.F) < 100)
@@ -67,7 +67,7 @@ async def other():
     await sound.beep(1661,200)
 
 async def other_right():
-    await runloop.until(lambda: button.pressed(button.RIGHT))
+    await runloop.until(lambda: button.pressed(button.RIGHT)>0)
     distance = 250
     await runloop.sleep_ms(1000)
     for i in range(4):
