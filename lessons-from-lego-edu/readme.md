@@ -1,5 +1,6 @@
 Project files and additional samples from the online lesson plans from Lego education: https://education.lego.com/en-us/lessons/?products=SPIKE%E2%84%A2+Prime+with+Python
 
+
 1. [Hardware and Software](https://education.lego.com/en-us/lessons/prime-python-communicating-ideas/)
 2. [Motors](https://education.lego.com/en-us/lessons/get-moving-with-motors/)
 3. [Sensors](https://education.lego.com/en-us/lessons/spike-python-u3-sensor-control/)
@@ -11,3 +12,6 @@ Project files and additional samples from the online lesson plans from Lego educ
 9. [Math](https://education.lego.com/en-us/lessons/spike-python-u9-data-and-math-functions/)
 10. [List](https://education.lego.com/en-us/lessons/spike-python-u10-lists/)
     
+
+
+
