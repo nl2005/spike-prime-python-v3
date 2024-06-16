@@ -6,7 +6,7 @@ DEGREES_PER_CM = 360/17.5
 
 def setup():
     
-    motor_pair.pair(motor_pair.PAIR_1, port.C, port.D)
+    motor_pair.pair(motor_pair.PAIR_1, port.C, port.E)
     global DEFAULT_VELOCITY
     DEFAULT_VELOCITY  = 10 * 50 
     global DEGREES_PER_CM
@@ -28,16 +28,18 @@ async def main():
 
 async def main_left():
     #while True:
-    await runloop.until(lambda: button.pressed(button.LEFT))
-    await runloop.sleep_ms(1000)
-    await motor_pair.move_for_degrees(motor_pair.PAIR_1,int(DEGREES_PER_CM * 20),0, velocity=DEFAULT_VELOCITY)
-    await motor_pair.move_for_degrees(motor_pair.PAIR_1,-int(DEGREES_PER_CM * 20),0, velocity=DEFAULT_VELOCITY)
+        await runloop.until(lambda: button.pressed(button.LEFT)>0)
+        sound.beep(440)
+        await runloop.sleep_ms(1000)
+    #await motor_pair.move_for_degrees(motor_pair.PAIR_1,int(DEGREES_PER_CM * 20),0, velocity=DEFAULT_VELOCITY)
+    #await motor_pair.move_for_degrees(motor_pair.PAIR_1,-int(DEGREES_PER_CM * 20),0, velocity=DEFAULT_VELOCITY)
 
 async def main_right():
-    while True:
-        await runloop.until(lambda: button.pressed(button.RIGHT))
+    #while True:
+        await runloop.until(lambda: button.pressed(button.RIGHT)>0)
+        sound.beep(1440)
         await runloop.sleep_ms(1000)
-        motor_pair.move_for_degrees(motor_pair.PAIR_1, 360*20,-40, velocity=DEFAULT_VELOCITY)
+    #    motor_pair.move_for_degrees(motor_pair.PAIR_1, 360*20,-40, velocity=DEFAULT_VELOCITY)
 
 
 async def drive_square_loop():
@@ -59,4 +61,4 @@ async def drive_square_yaw():
         await runloop.until(lambda: motion_sensor.tilt_angles()[0] > 89)
         motor_pair.stop(motor_pair.PAIR_1)
 
-runloop.run(main(), main_left(),main_right())
+runloop.run(main_left(),main_right())

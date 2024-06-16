@@ -4,7 +4,7 @@ import motor
 
 def pressed():
     # When the left button is pressed, it returns to open
-    return button.pressed(button.LEFT)
+    return button.pressed(button.LEFT)>0
 
 def released():
     # When the left button is released, it returns to close

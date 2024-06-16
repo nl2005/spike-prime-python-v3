@@ -33,7 +33,7 @@ async def run_face_up():
 
 
 async def main():
-    await run_tapped())
+    await run_tapped()
     await run_face_up()
 
 runloop.run(main())

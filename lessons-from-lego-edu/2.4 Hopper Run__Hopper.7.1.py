@@ -12,7 +12,7 @@ async def main():
     await runloop.sleep_ms(1000)
 
     # Pair motors on port A and B
-    motor_pair.pair(motor_pair.PAIR_1, port.C, port.D)
+    motor_pair.pair(motor_pair.PAIR_1, port.E, port.F)
 
     # Move straight at default velocity for 5 second
     await motor_pair.move_for_time(motor_pair.PAIR_1, 500, 0, velocity=200)

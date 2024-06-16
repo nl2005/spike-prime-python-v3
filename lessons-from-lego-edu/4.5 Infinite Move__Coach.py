@@ -12,7 +12,7 @@ def is_pressed_too_much():
     return motion_sensor.tap_count() > 1
 
 def should_run():
-    motion_sensor.tap_count() % 2 == 1
+    return motion_sensor.tap_count() % 2 == 1
 
 # def stop_run():
 #     motion_sensor.tap_count() % 2 == 0
@@ -28,10 +28,10 @@ async def main():
         await runloop.until(should_run)
 
         # Run at 300 velocity for 1/4 second
-        await motor.run_for_time(port.B, 250, 300)
-        await motor.run_for_time(port.A, 250, 300)
-        await motor.run_for_time(port.B, 250, -300)
-        await motor.run_for_time(port.A, 250, -300)
+        await motor.run_for_time(port.E, 250, 300)
+        await motor.run_for_time(port.F, 250, 300)
+        await motor.run_for_time(port.E, 250, -300)
+        await motor.run_for_time(port.F, 250, -300)
 
         # if is_pressed_too_much():
         #     break

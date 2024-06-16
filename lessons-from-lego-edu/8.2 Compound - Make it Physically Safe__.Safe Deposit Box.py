@@ -3,7 +3,7 @@ import runloop
 import motor
 
 def pressed():
-    return button.pressed(button.LEFT)
+    return button.pressed(button.LEFT)>0
 
 async def main():
     await sound.beep(262, 200)

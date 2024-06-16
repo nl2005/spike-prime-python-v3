@@ -9,10 +9,10 @@ def left_released():
 
 async def main():
     # Run a motor on port A to 180 degrees at 720 degrees per second. This will put the arm up to be ready to swing.
-    await motor.run_to_absolute_position(port.A, 180, 720)
+    await motor.run_to_absolute_position(port.E, 180, 720)
 
     # Run a motor on port A for 360 degrees at 720 degrees per second.
-    await motor.run_for_degrees(port.A, 360, 720)
+    await motor.run_for_degrees(port.F, 360, 720)
 
     #set the score to 0.
     score = 0

@@ -6,7 +6,7 @@ async def main():
     driving_velocity = 250
 
     # pair motors
-    motor_pair.pair(motor_pair.PAIR_1, port.C, port.D)
+    motor_pair.pair(motor_pair.PAIR_1, port.E, port.F)
 
     # define the ride function
     async def ride():
